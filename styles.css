@@ -1,0 +1,655 @@
+/* The Paintress — colours and type taken from the flyer */
+:root {
+  --cream: #feecdd;
+  --pink: #f9c6bd;
+  --olive: #827f4e;
+  --olive-dark: #686230;
+  --maroon: #602c23;
+  --text: #55504a;
+  --white: #fffaf5;
+
+  --font-display: "Zilla Slab", Rockwell, Georgia, serif;
+  --font-body: "Barlow Semi Condensed", "Avenir Next Condensed", "Arial Narrow", Arial, sans-serif;
+
+  --wrap: 1100px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  line-height: 1.55;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--maroon);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.5em;
+  color: var(--maroon);
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+.wrap {
+  width: min(var(--wrap), 100% - 2.5rem);
+  margin-inline: auto;
+}
+
+.eyebrow {
+  margin: 0 0 0.4rem;
+  color: var(--olive-dark);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section {
+  padding: clamp(3rem, 8vw, 5rem) 0;
+}
+
+.section-head {
+  max-width: 40rem;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.section-head > :last-child {
+  margin-bottom: 0;
+}
+
+/* Editable copy stays hidden for a moment while the latest version loads */
+.cms-loading [data-cms],
+.cms-loading [data-cms-text],
+.cms-loading [data-cms-list] {
+  visibility: hidden;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  padding: 1rem 0;
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-header .logo img {
+  width: 220px;
+}
+
+/* The home page shows the logo large in the hero instead */
+.home .site-header .wrap {
+  justify-content: center;
+}
+
+.home .site-header .logo {
+  display: none;
+}
+
+.nav {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.nav a {
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav a:hover {
+  background: var(--pink);
+}
+
+.nav a[aria-current="page"] {
+  background: var(--olive);
+  color: var(--cream);
+}
+
+/* ---------- Buttons (the olive pill from the flyer) ---------- */
+
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border: 0;
+  border-radius: 999px;
+  outline: 1.5px solid var(--cream);
+  outline-offset: -5px;
+  background: var(--olive);
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn:hover {
+  background: var(--olive-dark);
+}
+
+.btn:focus-visible,
+.nav a:focus-visible,
+.gallery button:focus-visible {
+  box-shadow: 0 0 0 3px var(--maroon);
+}
+
+.btn-pink {
+  outline-color: var(--maroon);
+  background: var(--pink);
+  color: var(--maroon);
+}
+
+.btn-pink:hover {
+  background: #f4b3a8;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+/* ---------- Home: hero ---------- */
+
+.hero {
+  padding: 1rem 0 clamp(3rem, 7vw, 4.5rem);
+  text-align: center;
+}
+
+.hero-logo {
+  width: min(620px, 100%);
+  margin: 0 auto 1.2rem;
+}
+
+.hero h1 {
+  max-width: 34rem;
+  margin: 0 auto 0.6rem;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+}
+
+.hero p {
+  max-width: 34rem;
+  margin: 0 auto 1.8rem;
+  font-size: 1.35rem;
+}
+
+.hero .btn-row {
+  justify-content: center;
+}
+
+/* ---------- Home: bio ---------- */
+
+.bio {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: stretch;
+}
+
+/* The photo fills its column so it is exactly as tall as the text beside it */
+.bio-photo {
+  position: relative;
+  min-height: 22rem;
+  border: 10px solid var(--white);
+  box-shadow: 14px 14px 0 var(--pink);
+}
+
+.bio-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 45%;
+}
+
+.bio-text [data-cms-text] > :last-child {
+  margin-bottom: 1em;
+}
+
+.bio-text > :last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Home: services ---------- */
+
+.band-pink {
+  background: var(--pink);
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.services li {
+  padding: 1.6rem 1.5rem;
+  border-radius: 14px;
+  background: var(--cream);
+}
+
+.services p {
+  margin: 0;
+}
+
+/* ---------- Home: testimonials ---------- */
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+
+.testimonials figure {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 1.8rem 1.6rem;
+  border-top: 6px solid var(--olive);
+  background: var(--white);
+  text-align: center;
+}
+
+.testimonials blockquote {
+  flex: 1;
+  margin: 0 0 1.2rem;
+  font-size: 1.15rem;
+  font-style: italic;
+}
+
+.testimonials blockquote::before {
+  content: "\201C";
+  display: block;
+  height: 2.2rem;
+  color: var(--pink);
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-style: normal;
+  line-height: 1;
+}
+
+.testimonials figcaption {
+  color: var(--maroon);
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+/* ---------- Call to action band ---------- */
+
+.band-olive {
+  background: var(--olive);
+  color: var(--cream);
+  text-align: center;
+}
+
+.band-olive h2 {
+  color: var(--cream);
+}
+
+.band-olive .btn-row {
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* ---------- Page title (Gallery / Contact) ---------- */
+
+.page-title {
+  padding: clamp(1.5rem, 5vw, 3rem) 0 0;
+  text-align: center;
+}
+
+.page-title p {
+  max-width: 36rem;
+  margin-inline: auto;
+}
+
+/* ---------- Gallery ---------- */
+
+.gallery {
+  columns: 3;
+  column-gap: 1rem;
+}
+
+.gallery button {
+  display: block;
+  width: 100%;
+  margin: 0 0 1rem;
+  padding: 0;
+  border: 8px solid var(--white);
+  background: var(--white);
+  cursor: zoom-in;
+  break-inside: avoid;
+}
+
+.gallery img {
+  width: 100%;
+  transition: opacity 0.15s;
+}
+
+.gallery button:hover img {
+  opacity: 0.85;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 1rem 1rem;
+  background: rgba(96, 44, 35, 0.92);
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.compare {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.compare figure {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+}
+
+.compare img,
+.compare-missing {
+  width: 100%;
+  max-height: calc(100vh - 8rem);
+  border: 6px solid var(--white);
+  background: var(--white);
+  object-fit: contain;
+}
+
+.compare-missing {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: var(--shape, 4 / 3);
+  margin: 0;
+  padding: 1rem;
+  background: var(--cream);
+  color: var(--olive-dark);
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-align: center;
+}
+
+.is-missing img {
+  display: none;
+}
+
+.is-missing .compare-missing {
+  display: flex;
+}
+
+.compare figcaption {
+  margin-top: 0.5rem;
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  padding: 0.3rem 1rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--cream);
+  color: var(--maroon);
+  font: 600 1rem var(--font-display);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* ---------- Contact ---------- */
+
+.contact {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.form {
+  padding: clamp(1.5rem, 4vw, 2.2rem);
+  background: var(--white);
+}
+
+.form label {
+  display: block;
+  margin-bottom: 1.1rem;
+  color: var(--maroon);
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.form input,
+.form textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.7rem 0.8rem;
+  border: 1.5px solid #d9c8b8;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: var(--olive);
+  outline: 2px solid var(--olive);
+}
+
+.form textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+.form .form-trap {
+  display: none;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.form-note {
+  margin: 1rem 0 0;
+  font-size: 1rem;
+}
+
+.form-note:empty {
+  display: none;
+}
+
+.contact-card {
+  padding: clamp(1.5rem, 4vw, 2.2rem);
+  border-radius: 14px;
+  background: var(--pink);
+}
+
+.contact-card .phone {
+  display: block;
+  margin-bottom: 1.2rem;
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.btn-whatsapp svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: currentColor;
+}
+
+.contact-card .area {
+  margin: 1.5rem 0 0;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  padding: 2.5rem 0;
+  background: var(--maroon);
+  color: var(--cream);
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 240px;
+  margin: 0 auto 1rem;
+}
+
+.site-footer a {
+  color: var(--pink);
+}
+
+.site-footer p {
+  margin: 0 0 0.3rem;
+}
+
+/* ---------- Smaller screens ---------- */
+
+@media (max-width: 800px) {
+  .bio,
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .services,
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    columns: 2;
+  }
+
+  .compare {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .compare figure {
+    flex: none;
+    width: 100%;
+  }
+
+  .compare img,
+  .compare-missing {
+    max-height: calc(50vh - 5.5rem);
+  }
+
+  .site-header .wrap {
+    justify-content: center;
+  }
+
+  .bio-photo {
+    width: min(420px, 100%);
+    min-height: 0;
+    margin-inline: auto;
+  }
+
+  .bio-photo img {
+    position: static;
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    columns: 1;
+  }
+
+  .nav a {
+    padding-inline: 0.7rem;
+    font-size: 0.9rem;
+  }
+}

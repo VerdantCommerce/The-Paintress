@@ -1,0 +1,48 @@
+{
+  "hero_heading": "Painter and decorator in the South Hams",
+  "hero_intro": "A friendly, professional finish for homes in Totnes, Dartmouth, Salcombe and the surrounding area.",
+  "bio_heading": "Hello, I’m Jules",
+  "bio_text": "After 25 years as an account manager in the UK ski and outdoor industry, redundancy gave me the opportunity to step away from corporate life and turn a long-standing passion into a career.\n\nHaving spent years painting and decorating for friends and family, I decided it was time to make it official – and so, The Paintress was born.\n\nI have a natural eye for interiors and colour, with experience ranging from complete renovations to refreshing and revitalising individual spaces. I love creating homes that feel personal, considered and connected to the people who live in them.\n\nFrom choosing colours that complement treasured furniture and accessories to drawing inspiration from nature and the surrounding environment, I bring a thoughtful and creative approach to every project.\n\nTake a look through my [gallery](gallery.html) to see some of my work, and explore below to see how I can help transform your space.",
+  "services_heading": "Painting and decorating services",
+  "services_intro": "Interior and exterior decorating services for homes in Totnes, Dartmouth, Salcombe and the wider South Hams.",
+  "services": [
+    {
+      "title": "Interior painting",
+      "text": "Walls, ceilings and feature walls, from a single room to the whole house."
+    },
+    {
+      "title": "Exterior painting",
+      "text": "Masonry, render, windows and doors, freshened up and protected from the weather."
+    },
+    {
+      "title": "Woodwork & trim",
+      "text": "Doors, skirting, stairs and panelling, carefully prepared for a smooth finish."
+    },
+    {
+      "title": "Kitchens & furniture",
+      "text": "Cabinets and cupboards repainted to give a tired kitchen a new lease of life."
+    },
+    {
+      "title": "Preparation & repairs",
+      "text": "Filling, sanding and making good, so the finish looks right and lasts."
+    },
+    {
+      "title": "Colour advice",
+      "text": "A friendly second opinion on colours and finishes before the first tin is opened."
+    }
+  ],
+  "testimonials_heading": "Kind words",
+  "testimonials_intro": "A South Devon painter and decorator you can trust with your home.",
+  "testimonials": [
+    {
+      "quote": "I have known Jules for many years, and during this time she has helped me with many things. Her incredible work ethic and eye for detail and brilliant project management skills have helped me to create and run my stand at a business show, and her wonderful taste and creativity have helped me decorate my home and garden. She has the skill to identify when something just isn’t working in a space and the imagination and creativity to know what is needed. I would wholeheartedly recommend her to anyone looking to make use of her vast skills and you will be amazed at the results she will deliver.",
+      "name": "Lucy, Marvellous PR"
+    },
+    {
+      "quote": "Jules has an amazing vision when it comes to transforming any space. She is practical, creative, full of energy and an absolute perfectionist. Whether you want a single wall painted or a whole house reinvented, Jules puts her heart and soul into everything she does, and you certainly won’t be disappointed, grab her while you can!",
+      "name": "Caroline"
+    }
+  ],
+  "cta_heading": "Thinking of freshening up your home?",
+  "cta_text": "Whether you’re in Totnes, Dartmouth, Salcombe or elsewhere in the South Hams, call or message Jules for a friendly chat about your project."
+}
