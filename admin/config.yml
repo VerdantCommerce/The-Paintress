@@ -3,7 +3,7 @@
 
 backend:
   name: github
-  repo: GITHUB-USERNAME/REPOSITORY-NAME   # <-- change this to your GitHub repository
+  repo: VerdantCommerce/The-Paintress   # <-- change this to your GitHub repository
   branch: main
 
 site_url: https://www.thepaintress.co.uk
